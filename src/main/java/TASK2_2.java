@@ -20,7 +20,7 @@ public class TASK2_2 {
     public static void main(String[] args) {
         /**
          * @param x - первое дробное число, вводимое пользователем
-         * @param x - второе дробное число, вводимое пользователем
+         * @param y - второе дробное число, вводимое пользователем
          * @param result - результат сложения/вычетания/деления/сложения двух дробных чисел
          */
         Scanner sc = new Scanner(System.in);
