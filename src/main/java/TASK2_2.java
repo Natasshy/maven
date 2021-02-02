@@ -25,32 +25,32 @@ public class TASK2_2 {
          */
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите знак необходимой арифметической операции: +, -, /, *: ");
-        String string = sc.next();
+        char znak = sc.next().charAt(0);
 
         System.out.println("Введите первое дробное число: ");
         double x = sc.nextDouble();
-        System.out.println("Введите первое второе число: ");
+        System.out.println("Введите второе дробное число: ");
         double y = sc.nextDouble();
         double result = 0;
 
-        if (string == "+") {
-              result = x + y;
+        switch (znak) {
+            case '+':
+                result = x + y;
+                break;
+            case '-':
+                result = x - y;
+                break;
+            case '*':
+                result = x * y;
+                break;
+            case '/':
+                result = x / y;
+                break;
         }
-       else if (string == "-") {
-               result = x - y;
-        }
-
-       else if (string == "/") {
-               result = x / y;
-        }
-
-       else if (string == "*") {
-               result = x * y;
-        }
-
         System.out.printf("Полученный результат: %.4f", result);
 
         sc.close();
     }
-
 }
+
+
