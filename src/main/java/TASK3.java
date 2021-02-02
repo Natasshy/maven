@@ -17,6 +17,11 @@ import java.util.*;
 public class TASK3 {
 
     public static void main(String[] args) {
+        /**
+         * @param int number - длина массива
+         * @param String[] arr - массив слов
+         * @param String max - максимальное по длине слово массива
+         */
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите длину массива: ");
         int number = sc.nextInt();
