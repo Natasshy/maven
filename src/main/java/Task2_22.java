@@ -18,21 +18,29 @@ import java.util.Scanner;
 
 public class Task2_22 {
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите знак необходимой арифметической операции: +, -, /, *: ");
+
+        /**
+         * * @param znak - знак необходимой арифметической операции
+         */
+        char znak = sc.next().charAt(0);
+
         /**
          * @param x - первое дробное число, вводимое пользователем
          * @param y - второе дробное число, вводимое пользователем
-         * @param znak - знак необходимой арифметической операции
-         * @param result - результат сложения/вычетания/деления/сложения двух дробных чисел
          */
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите знак необходимой арифметической операции: +, -, /, *: ");
-        char znak = sc.next().charAt(0);
-
         System.out.println("Введите первое дробное число: ");
         double x = sc.nextDouble();
         System.out.println("Введите второе дробное число: ");
         double y = sc.nextDouble();
+
+        /**
+         *   @param result - результат сложения/вычетания/деления/умножения двух дробных чисел
+         */
         double result = 0;
+
 
         switch (znak) {
             case '+':

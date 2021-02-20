@@ -15,22 +15,25 @@
 import java.util.Scanner;
 
 public class Task2_1 {
+
     public static void main(String[] args) {
-        /**
-         * @param x - первое дробное число, вводимое пользователем
-         * @param y - второе дробное число, вводимое пользователем
-         * @param result - результат сложения двух дробных чисел
-         */
+/**
+ * @param x - первое дробное число, вводимое пользователем
+ * @param y - второе дробное число, вводимое пользователем
+ */
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите первое дробное число: ");
         double x = sc.nextDouble();
         System.out.println("Введите второе дробное число: ");
         double y = sc.nextDouble();
 
+        /**
+         * @param result - результат сложения двух дробных чисел
+         */
         double result = x + y;
 
         System.out.printf("Полученный результат: %.4f", result);
-
         sc.close();
     }
 

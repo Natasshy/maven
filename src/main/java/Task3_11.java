@@ -20,7 +20,6 @@ public class Task3_11 {
         /**
          * @param int number - длина массива
          * @param String[] arr - массив слов
-         * @param String max - максимальное по длине слово массива
          */
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите длину массива: ");
@@ -34,12 +33,19 @@ public class Task3_11 {
 
         System.out.println("Введенный массив:" + Arrays.toString(arr));
 
-
+/**
+ * @param String max - максимальное по длине слово массива
+ */
         String max = getMax(arr);
         System.out.println("Самое длинное слово: " + max);
 
     }
 
+    /**
+     *
+     * @param inputArray входящее значение
+     * @return максимальное значение maxValue
+     */
     public static String getMax(String[] inputArray) {
         String maxValue = inputArray[0];
         for (int i = 1; i < inputArray.length; i++) {
