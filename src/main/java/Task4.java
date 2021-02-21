@@ -39,7 +39,6 @@ public class Task4 {
         myArray[positive] = temp;
 
         System.out.println("Массив после перестановки: " + Arrays.toString(myArray));
-
     }
 
     /**
