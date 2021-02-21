@@ -1,6 +1,7 @@
 /*
-1. Массив размерностью 20, заполняется случайными целыми числами от -10 до 10.
- Найти максимальный отрицательный и минимальный положительный элементы массива. Поменять их местами.
+- Массив размерностью 20, заполняется случайными целыми числами от -10 до 10.
+- Найти максимальный отрицательный и минимальный положительный элементы массива.
+- Поменять их местами.
  */
 
 
@@ -8,58 +9,51 @@ import java.util.*;
 
 public class Task4 {
     public static void main(String[] args) {
-        int[] myArray = new int[20];
+        int[] myArray = createAndFillRandomArray(20);
 
+        int maxNegative = Integer.MIN_VALUE;
+        int minPositive = Integer.MAX_VALUE;
+        int positive = 0, negative = 0;
+        int temp;
+
+        //здесь находим Максимальный отрицательный элемент массива
         for (int i = 0; i < myArray.length; i++) {
-            int a = -10;
-            int b = 10;
-            myArray[i] = a + (int) (Math.random() * ((b - a) + 1));
+            if ((myArray[i] < 0) && (maxNegative < myArray[i])) {
+                maxNegative = myArray[i];
+                negative = i;
+            }
+
+            // здесь находим Минимальный положительный элемент массива
+            if ((myArray[i] > 0) && (minPositive > myArray[i])) {
+                minPositive = myArray[i];
+                positive = i;
+            }
         }
-        System.out.println("Рандомный массив от -10 до 10:" + Arrays.toString(myArray));
 
-
-        int maxNegative = getMax(myArray);
+        System.out.println("Минимальный положительный элемент массива: " + minPositive);
         System.out.println("Максимальный отрицательный элемент массива: " + maxNegative);
 
-        int minPositive = getMin(myArray);
-        System.out.println("Минимальный положительный элемент массива: " + minPositive);
+        //здесь меняем местами элементы массива
+        temp = myArray[negative];
+        myArray[negative] = myArray[positive];
+        myArray[positive] = temp;
 
-        System.out.println("Меняем местами указанные элементы: " + swap);
+        System.out.println("Массив после перестановки: " + Arrays.toString(myArray));
 
-        void swap(int a, int b) {
-            int c = myArray[a];  // записываем первонач. значение arr[a] в переменную с
-            myArray[a] = myArray[b]; // в arr[a] записываем arr[b]
-            myArray[b] = c;      // в arr[b] записываем с (первонач. значение arr[a])
-        }
     }
 
-    //здесь находим Максимальный отрицательный элемент массива
-    public static int getMax(int[] inputArray) {
-        int maxValueNegative = inputArray[0];
-        for (int i = 1; i < inputArray.length; i++) {
-            if (inputArray[i] < maxValueNegative & inputArray[i] < 0 ) {
-                maxValueNegative = inputArray[i];
-            }
+    /**
+     * @param n - длина массива
+     * @return возвращаем рандомный массив от -  10 до 10
+     */
+    private static int[] createAndFillRandomArray(int n) {
+
+        int[] mas = new int[n];
+        for (int i = 0; i < n; i++) {
+            mas[i] = (int) ((Math.random() * 21) - 10);
         }
-        return maxValueNegative;
-    }
-
-    // здесь находим Минимальный положительный элемент массива
-    public static int getMin(int[] inputArray) {
-        int minValuePositive = inputArray[0];
-        for (int i = 1; i < inputArray.length; i++) {
-            if (inputArray[i] < minValuePositive & inputArray[i] > 0 ) {
-                minValuePositive = inputArray[i];
-            }
-        }
-        return minValuePositive;
-
-
+        System.out.println("Рандомный массив от -10 до 10: " + Arrays.toString(mas));
+        return mas;
     }
 }
-
-
-
-
-
 
