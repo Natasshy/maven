@@ -8,19 +8,17 @@
 Полученный результат округлять до 4-х знаков после запятой.
  */
 
-/**
- * @author Natalia Dolmatova
- */
 
 import java.util.Scanner;
 
 public class Task2_1 {
-
+    /**
+     * @author Natalia Dolmatova
+     * х -  первое дробное число, вводимое пользователем
+     * у -  второе дробное число, вводимое пользователем
+     * result - итоговое значение
+     */
     public static void main(String[] args) {
-/**
- * @param x - первое дробное число, вводимое пользователем
- * @param y - второе дробное число, вводимое пользователем
- */
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите первое дробное число: ");
@@ -28,9 +26,7 @@ public class Task2_1 {
         System.out.println("Введите второе дробное число: ");
         double y = sc.nextDouble();
 
-        /**
-         * @param result - результат сложения двух дробных чисел
-         */
+
         double result = x + y;
 
         System.out.printf("Полученный результат: %.4f", result);
