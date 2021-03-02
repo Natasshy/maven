@@ -12,6 +12,7 @@
 import java.util.Scanner;
 
 public class Task2_1 {
+
     /**
      * @author Natalia Dolmatova
      * х -  первое дробное число, вводимое пользователем
@@ -25,7 +26,6 @@ public class Task2_1 {
         double x = sc.nextDouble();
         System.out.println("Введите второе дробное число: ");
         double y = sc.nextDouble();
-
 
         double result = x + y;
 
