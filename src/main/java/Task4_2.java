@@ -1,21 +1,21 @@
-/*
-Формируется новогодний подарок.
-Он может включать в себя разные сладости (Candy, Jellybean, etc.)
-У каждой сладости есть название, вес, цена и свой уникальный параметр.
- Необходимо собрать подарок из сладостей.
- Найти общий вес подарка, общую стоимость подарка и вывести на консоль информацию о всех сладостях в подарке.
- */
+
+//Формируется новогодний подарок.
+//Он может включать в себя разные сладости (Candy, Jellybean, etc.)
+//У каждой сладости есть название, вес, цена и свой уникальный параметр.
+// Необходимо собрать подарок из сладостей.
+// Найти общий вес подарка, общую стоимость подарка и вывести на консоль информацию о всех сладостях в подарке.
+//
 
 import java.util.*;
 
 public class Task4_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Items Candy = new Items("Candy", 10, 1);
-        Items Jellybean = new Items("Jellybean", 15, 5);
-        Items Chocolate = new Items("Chocolate", 20, 3);
+        Item Candy = new Item("Candy", 10, 1);
+        Item Jellybean = new Item("Jellybean", 15, 5);
+        Item Chocolate = new Item("Chocolate", 20, 3);
 
-        List<Items> productList = new ArrayList<>();
+        List<Item> productList = new ArrayList<>();
         productList.add(Candy);
         productList.add(Jellybean);
         productList.add(Chocolate);
@@ -43,37 +43,38 @@ public class Task4_2 {
             }
         }
 
-        System.out.println("Общее количетво сладостей в подарке: " + Items.totalQuantity);
-        System.out.println("Общая цена: " + Items.totalPrice);
-        System.out.println("Общий вес: " + Items.totalWeight);
-        System.out.println("Подарок состоит из: " + Items.getName);
-
-
+        System.out.println("Общее количетво сладостей в подарке: " + totalQuantity;
+              System.out.println("Общая цена: " + Item.totalPrice);
+        System.out.println("Общий вес: " + Item.totalWeight);
+        System.out.println("Подарок состоит из: " + Item.getName);
     }
+
+
 
 }
 
-class Items {
-    public static String getName;
-    private String name;
-    private int price;
-    private int weight;
-    protected static int totalPrice = 0;
-    protected static int totalQuantity = 0;
-    protected static int totalWeight = 0;
+class Item {
 
-    Items(String name, int price, int weight) {
+    private  String name;
+    public  int price;
+    public  int weight;
+    protected   int totalPrice = 0;
+    protected   int totalQuantity = 0;
+    protected   int totalWeight = 0;
+
+    Item(String name, int price, int weight) {
         this.name = name;
         this.price = price;
         this.weight = weight;
     }
 
     public void getResult(int quantity) {
-        this.totalQuantity += quantity;
-        this.totalPrice += (price * quantity);
-        this.totalWeight += weight;
-        this.getName += name + " ";
+        totalQuantity += quantity;
+        totalPrice += (price * quantity);
+        totalWeight += weight;
+
     }
+
 
     public String getName() {
         return name;
@@ -82,6 +83,5 @@ class Items {
     public int getPrice() {
         return price;
     }
-
 }
 
