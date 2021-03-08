@@ -44,23 +44,22 @@ public class Task4_2 {
         }
 
         System.out.println("Общее количетво сладостей в подарке: " + totalQuantity;
-              System.out.println("Общая цена: " + Item.totalPrice);
+        System.out.println("Общая цена: " + Item.totalPrice);
         System.out.println("Общий вес: " + Item.totalWeight);
         System.out.println("Подарок состоит из: " + Item.getName);
     }
-
 
 
 }
 
 class Item {
 
-    private  String name;
-    public  int price;
-    public  int weight;
-    protected   int totalPrice = 0;
-    protected   int totalQuantity = 0;
-    protected   int totalWeight = 0;
+    private String name;
+    public int price;
+    public int weight;
+    protected int totalPrice = 0;
+    protected int totalQuantity = 0;
+    protected int totalWeight = 0;
 
     Item(String name, int price, int weight) {
         this.name = name;
