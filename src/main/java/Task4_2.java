@@ -46,7 +46,7 @@ public class Task4_2 {
         System.out.println("Общее количетво сладостей в подарке: " + totalQuantity;
         System.out.println("Общая цена: " + Item.totalPrice);
         System.out.println("Общий вес: " + Item.totalWeight);
-        System.out.println("Подарок состоит из: " + Item.getName);
+        System.out.println("Подарок состоит из: " + Item.getName()));
     }
 
 
