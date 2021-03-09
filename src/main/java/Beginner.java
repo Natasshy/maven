@@ -8,32 +8,30 @@ import java.util.Scanner;
 
 public class Beginner {
     public static void main(String[] args) {
-        System.out.println("ФИО: " + ascName() + " " + ascSecondName() + " " + ascPatronymic() + ", возраст: " + ascAge() + " лет");
+        printResult(ascFIO(), ascAge());
 
     }
 
-    public static String ascName() {
+    public static String ascFIO() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Введите имя: ");
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
-    }
-
-    public static String ascSecondName() {
+        String name = sc.nextLine();
         System.out.println("Введите фамилию: ");
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
-    }
-
-    public static String ascPatronymic() {
+        String secondName = sc.nextLine();
         System.out.println("Введите отчество: ");
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
+        String patronomic = sc.nextLine();
+        return name + " " + secondName + " " + patronomic;
+
     }
 
     public static int ascAge() {
         System.out.println("Введите год рождения: ");
         Scanner sc = new Scanner(System.in);
         return 2021 - sc.nextInt();
+    }
+
+    public static void printResult(String FIO, int age) {
+        System.out.println("ФИО: " + FIO + ", возраст: " + age + " лет");
     }
 
 }
