@@ -8,8 +8,11 @@
  */
 
 
+import javax.crypto.spec.PSource;
 import java.io.*;
 import java.util.*;
+
+import static java.util.Collections.*;
 
 
 public class Task6 {
@@ -18,7 +21,7 @@ public class Task6 {
         ArrayList<String> listOfLines = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/test.txt"))) {
             while ((s = br.readLine()) != null) {
-                Collections.addAll(listOfLines, s.split(" "));
+                addAll(listOfLines, s.split(" "));
                 System.out.println(listOfLines);
             }
 
@@ -28,26 +31,31 @@ public class Task6 {
         }
 
 
-        Collections.sort(listOfLines);
+        sort(listOfLines);
         System.out.println("Отсортированые в алфавитном порядке слова - " + listOfLines);
 
-        int index = 0;
-        String word = null;
-        for (int i = 0; i < listOfLines.size(); i++) {
-            for (int j = i + 1; j < listOfLines.size(); j++) {
-                if (listOfLines.get(i).equals(listOfLines.get(j))) {
-                    index++;
-                    word = listOfLines.get(i);
-                } else {
-                    word = listOfLines.get(i);
-                    index = 1;
-                }
-            }
-            System.out.println("Слово '" + word + "' встречается в тексте: " + index + " раз/a.");
 
+        HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+        Integer item;
+
+        for (String words : listOfLines) {
+            item = hashMap.get(words);
+            if (item == null) hashMap.put(words, 1);
+            else hashMap.put(words, item + 1);
         }
 
-        System.out.println("Максимально часто встречается слово: '" +    "'" + " раз/a.");
+        System.out.println("Количество слов в тексте и повторений: " + hashMap);
+
+        String maxKey = Collections.max(hashMap.keySet());
+        int maxValue = Collections.max(hashMap.values());
+
+        System.out.println(maxValue);
+
+
+
+
+
+
 
 
     }
