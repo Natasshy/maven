@@ -35,7 +35,7 @@ public class Task6 {
         System.out.println("Отсортированые в алфавитном порядке слова - " + listOfLines);
 
 
-        HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+        Map<String, Integer> hashMap = new TreeMap <String, Integer>();
         Integer item;
 
         for (String words : listOfLines) {
@@ -44,20 +44,18 @@ public class Task6 {
             else hashMap.put(words, item + 1);
         }
 
-        System.out.println("Количество слов в тексте и повторений: " + hashMap);
+        System.out.println("Количество повторений слов в тексте: " + hashMap);
 
-        String maxKey = Collections.max(hashMap.keySet());
+        String key = Collections.max(hashMap.entrySet(), Map.Entry.comparingByValue()).getKey();
         int maxValue = Collections.max(hashMap.values());
 
-        System.out.println(maxValue);
 
 
-
-
-
+        System.out.println("Слово с максимальным количеством повторений: " + maxValue + " - " +  key);
 
 
 
     }
 }
+
 
