@@ -8,7 +8,6 @@
  */
 
 
-import javax.crypto.spec.PSource;
 import java.io.*;
 import java.util.*;
 
@@ -35,7 +34,7 @@ public class Task6 {
         System.out.println("Отсортированые в алфавитном порядке слова - " + listOfLines);
 
 
-        Map<String, Integer> hashMap = new TreeMap <String, Integer>();
+        Map<String, Integer> hashMap = new TreeMap<String, Integer>();
         Integer item;
 
         for (String words : listOfLines) {
@@ -50,9 +49,7 @@ public class Task6 {
         int maxValue = Collections.max(hashMap.values());
 
 
-
-        System.out.println("Слово с максимальным количеством повторений: " + maxValue + " - " +  key);
-
+        System.out.println("Слово с максимальным количеством повторений: " + key + " - " + maxValue);
 
 
     }
