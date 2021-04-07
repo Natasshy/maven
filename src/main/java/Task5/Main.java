@@ -15,6 +15,7 @@ public class Main {
         char znak = scanner.next().charAt(0);
 
 
+
         switch (znak) {
             case '+' -> calc.Plus(a, b);
             case '-' -> calc.Minus(a, b);
