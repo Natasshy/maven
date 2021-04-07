@@ -1,7 +1,6 @@
 package Task7;
 
 
-
 public class Calcul {
 
 
@@ -20,11 +19,13 @@ public class Calcul {
 
     public static void Multiply(double a, double b) {
         try {
+            if (Double.isInfinite(a / b)) {
+                throw (new Exception());
+            }
             System.out.println("Полученный результат: " + (a / b));
+        } catch (Exception e) {
+            System.out.println("Ошибка - На ноль делить нельзя!");
         }
-        catch (Exception ex)
-        {
-            System.out.println("На ноль делить нельзя!" + ex.getMessage());
-        }
+
     }
 }
