@@ -18,8 +18,8 @@ public class main {
             switch (znak) {
                 case '+' -> calc.Plus(a, b);
                 case '-' -> calc.Minus(a, b);
-                case '*' -> calc.Divide(a, b);
-                case '/' -> calc.Multiply(a, b);
+                case '*' -> calc.Multiply(a, b);
+                case '/' -> calc.Divide(a, b);
             }
 
         } catch (Exception e) {

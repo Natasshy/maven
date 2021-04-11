@@ -13,11 +13,11 @@ public class Calcul {
     }
 
 
-    public static void Divide(double a, double b) {
+    public static void Multiply(double a, double b) {
         System.out.println("Полученный результат: " + (a * b));
     }
 
-    public static void Multiply(double a, double b) {
+    public static void Divide(double a, double b) {
         try {
             if (Double.isInfinite(a / b)) {
                 throw (new Exception());
