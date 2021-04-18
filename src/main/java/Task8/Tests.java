@@ -9,13 +9,13 @@ public class Tests {
     @Test
     public void testGetSum() throws Exception {
         Calcul calculator = new Calcul();
-        assertEquals(15.0, calculator.Plus(7, 8));
+        assertEquals(15, calculator.Plus(7, 8),0);
     }
 
     @Test
     public void testGetDivide() throws Exception {
         Calcul calculator = new Calcul();
-        assertEquals(20.0, calculator.Divide(100, 5));
+        assertEquals(20, calculator.Divide(100, 5), 0);
     }
 
 
